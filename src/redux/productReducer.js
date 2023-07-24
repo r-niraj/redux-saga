@@ -1,13 +1,12 @@
-import { PRODUCT_LIST } from "./constant";
+import { PRODUCT_LIST, SET_PRODUCT_LIST } from "./constant";
 
 
 
 export const productData =(data=[],action)=>{
     switch(action.type){
-        case PRODUCT_LIST:
-        return [action.payload];
-
+        case SET_PRODUCT_LIST:
+            return [action.payload];
         default:
             return data; 
     }
-}
+} 
