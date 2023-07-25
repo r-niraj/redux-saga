@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux'
 
 
 const Header = () => {
-    const result = useSelector(state=>state);
-    // console.log(result);
+  const result = useSelector(state=>state.cartData);
+  console.log(result);
   return (
     <div className='Header'>
         <div className="cartItem">
-            <span>{result.cartData.length}</span>
+            <span>{result.length}</span>
             <i className="fa-solid fa-cart-shopping"></i>
         </div>
     </div>
