@@ -1,29 +1,40 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../App.css';
-import { addToCart, removeFromCart,emptyCart} from '../redux/action';
+import { addToCart, removeFromCart, emptyCart } from '../redux/action';
 import { useDispatch, useSelector } from 'react-redux';
 import { productList } from '../redux/productAction';
-
+ 
 const Main = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const allProducts = useSelector(state=>state);
-    console.log(allProducts);
+  const allProducts = useSelector(state => state.productData);
 
-    const product = {
-        name:"Samsung",
-        type: "mobile",
-        price: 5000,
-        color: "red"
-    }
-
+  useEffect(()=>{
+    dispatch(productList())
+  },[])
   return (
-    <div className='ActionButtons'>
-          <button onClick={()=>dispatch(addToCart(product))}>Add to cart</button>
-          <button onClick={()=>dispatch(removeFromCart(product.name))}>Remove From cart</button>
-          <button onClick={()=>dispatch(emptyCart())}>Empty Cart</button>
-          <button onClick={()=>dispatch(productList())}>Load Data</button>
-    </div>
+    <>
+      <div className='ActionButtons'>
+        <button onClick={() => dispatch(emptyCart())}>Empty Cart</button>
+      </div>
+
+      <div className='ProductContainer'>
+        {
+          allProducts.map(eachProduct => {
+            return (
+              <div className='productItem' key={eachProduct.id}>
+                <img src={eachProduct.images[0]} alt="" />
+                <div className="title">{eachProduct.title}</div>
+                <div className="actionButtonsInner">
+                  <button className="add2Cart" onClick={()=>dispatch(addToCart(eachProduct))}>+</button>
+                  <button className="removeFcart" onClick={()=>dispatch(removeFromCart(eachProduct.id))}>-</button>
+                </div>
+              </div>
+            )
+          })
+        }
+      </div>
+    </>
   )
 }
 

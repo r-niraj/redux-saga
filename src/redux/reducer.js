@@ -6,10 +6,11 @@ export const cartData=(data=[], action)=>{
             console.log("Added to cart case exe from reducer");
             return [...data, action.payload];
         case REMOVE_FROM_CART:
-            debugger
-            let copyData = [...data];
-            copyData.pop();
-            return [...copyData];
+            // let copyData = [...data];  
+            const remainingItem = [data.filter(item=>item.id!==action.payload)]
+            // copyData.pop();
+            console.log(remainingItem);
+            return [...remainingItem];
         case EMPTY_CART:
             console.log("Empty Cart case exe from reducer");
             data= [];

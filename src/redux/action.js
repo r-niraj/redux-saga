@@ -8,7 +8,6 @@ export const addToCart = (payload) =>{
 }
 
 export const removeFromCart = (payload) =>{
-    console.log("action remove from cart called");
     return {
         type: REMOVE_FROM_CART,
         payload
