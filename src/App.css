@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-=======
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 body{
   font-family: 'Poppins', sans-serif;
 }
 
->>>>>>> f6804e7 (UI change)
 .Header{
   position: sticky;
   top: 10px;
@@ -71,17 +68,9 @@ body{
   gap: 10px;
 }
 
-<<<<<<< HEAD
-.actionButtonsInner button{
-=======
 /* .actionButtonsInner button{
->>>>>>> f6804e7 (UI change)
     background-color: #ddd;
     border: none;
     font-size: 16px;
     cursor: pointer;
-<<<<<<< HEAD
-}
-=======
 } */
->>>>>>> f6804e7 (UI change)
