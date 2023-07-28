@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/.npm-global
+/~/.npm-global
 /.pnp
 .pnp.js
 
