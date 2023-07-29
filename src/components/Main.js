@@ -6,7 +6,7 @@ import { productList } from '../redux/productAction';
 
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
-import { IconButton } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
 
 const Main = () => {
   const dispatch = useDispatch();
@@ -15,11 +15,12 @@ const Main = () => {
 
   useEffect(() => {
     dispatch(productList());
+    // eslint-disable-next-line
   }, [])
   return (
     <>
       <div className='ActionButtons'>
-        <button onClick={() => dispatch(emptyCart())}>Empty Cart</button>
+        <Button variant='contained' size='small' disableElevation sx={{borderRadius:0}} onClick={() => dispatch(emptyCart())}>Empty Cart</Button>
       </div>
 
       <div className='ProductContainer'>
