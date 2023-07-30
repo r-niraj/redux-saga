@@ -6,7 +6,9 @@ body{
 
 .Header{
   position: sticky;
-  top: 10px;
+  background: #fff;
+  top: 0;
+  z-index: 9;
 }
 .Header .cartItem{
   position: absolute;
@@ -54,7 +56,15 @@ body{
 .cartTable{
   border-collapse: collapse;
 }
-
+.searchBar{
+  width: 40%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 8px;
+  margin-left: 25%;
+  outline: none;
+  background: #fff;
+}
 .pricePrntRw{
   display: flex;
   justify-content: space-between;
